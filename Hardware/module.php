@@ -27,8 +27,7 @@
 
 			
 
-			//Never delete this line!
-
+			//Never delete this line!_
 			parent::ApplyChanges();
 
 		}
@@ -49,7 +48,7 @@
 
 		*/
 
-		public function CPU Last()
+		public function CPU_Last()
 
 		{
 
