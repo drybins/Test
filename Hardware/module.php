@@ -1,5 +1,5 @@
 <?
-	class KirschBHKW extends IPSModule
+	class Hardware extends IPSModule
 
 	{
 
