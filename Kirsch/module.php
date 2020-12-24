@@ -24,17 +24,20 @@ class BHKW extends IPSModule
     {
         // Diese Zeile nicht löschen
         parent::ApplyChanges();
+        $this->ConnectParent("{3CFF0FD9-E306-41DB-9B5A-9D06D38576C3}");
+    
     }
+    
+    
 
-    /**
-     * Die folgenden Funktionen stehen automatisch zur Verfügung, wenn das Modul über die "Module Control" eingefügt wurden.
-     * Die Funktionen werden, mit dem selbst eingerichteten Prefix, in PHP und JSON-RPC wiefolgt zur Verfügung gestellt:
-     *
-     * ABC_MeineErsteEigeneFunktion($id);
-     *
-     */
-    public function MeineErsteEigeneFunktion()
-    {
-        // Selbsterstellter Code
-    }
+    public function ReceiveData($JSONString)
+		{
+			$data = json_decode($JSONString);
+			IPS_LogMessage("IOTest RECV", utf8_decode($data->Buffer));
+
+			//Parse and write values to our variables
+			
+			//Send response back to the splitter
+			return "OK from " . $this->InstanceID;
+		}
 }
