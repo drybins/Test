@@ -1,37 +1,40 @@
-<?
-	class Withings extends IPSModule
-	{
-		
-    //**************************************************************************
-    //
-    //**************************************************************************    
+<?php
+// Klassendefinition
+class BHKW extends IPSModule
+{
+
+    // Überschreibt die interne IPS_Create($id) Funktion
     public function Create()
-      {
-      //Never delete this line!
-      parent::Create();
-    
-      $this->RegisterPropertyInteger("Intervall", 21600);  
-      $this->RegisterPropertyBoolean("BodyMeasures", false);
-      $this->RegisterPropertyBoolean("BodyPuls", false);  
-      $this->RegisterPropertyBoolean("BloodMeasures", false);  
-      $this->RegisterPropertyString("Username", "user@user.de");  
-      $this->RegisterPropertyString("Userpassword", "123456");  
-      $this->RegisterPropertyString("User", "XXX");  
-      $this->RegisterPropertyBoolean("Logging", false);  
-      $this->RegisterPropertyBoolean("Modulaktiv", true);  
-      $this->RegisterTimer("WIT_UpdateTimer", 0, 'WIT_Update($_IPS[\'TARGET\']);');
-      $this->RegisterPropertyBoolean("BloodLogging", false);  
-      $this->RegisterPropertyBoolean("BloodVisible", false);  
-      $this->RegisterPropertyBoolean("BodyLogging" , false);  
-      $this->RegisterPropertyBoolean("BodyVisible" , false);  
-      }
-    
-    //**************************************************************************
-    //
-    //**************************************************************************    
-		public function ApplyChanges()
-		  {
-			//Never delete this line!
-			parent::ApplyChanges();
-	    } 
-?>
+    {
+        // Diese Zeile nicht löschen.
+        parent::Create();
+
+        if(!IPS_VariableProfileExists("Dierk")) {
+            IPS_CreateVariableProfile("Dierk", 1);
+        }
+        //if(!IPS_VARIABLEPROFILEEXISTS("Kw")
+        //{
+        //    IPS_CreateVariableProfile("Kw",1);
+        //}
+        //$this->IPS_CreateVariableProfile("Dierk",1);
+    }
+
+    // Überschreibt die intere IPS_ApplyChanges($id) Funktion
+    public function ApplyChanges()
+    {
+        // Diese Zeile nicht löschen
+        parent::ApplyChanges();
+    }
+
+    /**
+     * Die folgenden Funktionen stehen automatisch zur Verfügung, wenn das Modul über die "Module Control" eingefügt wurden.
+     * Die Funktionen werden, mit dem selbst eingerichteten Prefix, in PHP und JSON-RPC wiefolgt zur Verfügung gestellt:
+     *
+     * ABC_MeineErsteEigeneFunktion($id);
+     *
+     */
+    public function MeineErsteEigeneFunktion()
+    {
+        // Selbsterstellter Code
+    }
+}
