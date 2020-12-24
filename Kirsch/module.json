@@ -1,0 +1,15 @@
+{
+    "id": "{8F078ABF-D437-8949-7BE3-A27772A1BAA4}",
+    "name": "BHKW",
+    "type": 3,
+    "vendor": "Kirsch",
+    "aliases":
+    [
+        "BHKW4.12"
+    ],
+    "url": "https://www.KAT-CS.de",
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "BHKW"
+}
