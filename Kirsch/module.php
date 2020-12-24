@@ -9,14 +9,14 @@ class BHKW extends IPSModule
         // Diese Zeile nicht löschen.
         parent::Create();
 
-        if(!IPS_VariableProfileExists("Dierk")) {
-            IPS_CreateVariableProfile("Dierk", 1);
-        }
+        //if(!IPS_VariableProfileExists("Dierk")) {
+        //    IPS_CreateVariableProfile("Dierk", 1);
+        //}
         //if(!IPS_VARIABLEPROFILEEXISTS("Kw")
         //{
         //    IPS_CreateVariableProfile("Kw",1);
         //}
-        //$this->IPS_CreateVariableProfile("Dierk",1);
+        $this->IPS_CreateVariableProfile("Dierk",1);
     }
 
     // Überschreibt die intere IPS_ApplyChanges($id) Funktion
