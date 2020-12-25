@@ -17,6 +17,8 @@ class BHKW extends IPSModule
         //    IPS_CreateVariableProfile("Kw",1);
         //}
         $this->IPS_CreateVariableProfile("Dierk",1);
+	
+	$this->ConnectParent("{3CFF0FD9-E306-41DB-9B5A-9D06D38576C3}");
     }
 
     // Überschreibt die intere IPS_ApplyChanges($id) Funktion
@@ -24,7 +26,7 @@ class BHKW extends IPSModule
     {
         // Diese Zeile nicht löschen
         parent::ApplyChanges();
-        $this->ConnectParent("{3CFF0FD9-E306-41DB-9B5A-9D06D38576C3}");
+        
     
     }
     
@@ -40,4 +42,15 @@ class BHKW extends IPSModule
 			//Send response back to the splitter
 			return "OK from " . $this->InstanceID;
 		}
+        private function CreateVariableProfile($ProfileName, $ProfileType, $Suffix, $MinValue, $MaxValue, $StepSize, $Digits, $Icon) 
+	{
+		    if (!IPS_VariableProfileExists($ProfileName)) 
+		    {
+			       IPS_CreateVariableProfile($ProfileName, $ProfileType);
+			       IPS_SetVariableProfileText($ProfileName, "", $Suffix);
+			       IPS_SetVariableProfileValues($ProfileName, $MinValue, $MaxValue, $StepSize);
+			       IPS_SetVariableProfileDigits($ProfileName, $Digits);
+			       IPS_SetVariableProfileIcon($ProfileName, $Icon);
+		    }
+	 }
 }
