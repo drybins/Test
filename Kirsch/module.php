@@ -43,7 +43,7 @@ class BHKW extends IPSModule
 			//Send response back to the splitter
 			return "OK from " . $this->InstanceID;
 		}
-        private function CreateVariableProfile($ProfileName, $ProfileType, $Suffix, $MinValue, $MaxValue, $StepSize, $Digits, $Icon) 
+        private function IPS_CreateVariableProfile($ProfileName, $ProfileType, $Suffix, $MinValue, $MaxValue, $StepSize, $Digits, $Icon) 
 	{
 		    if (!IPS_VariableProfileExists($ProfileName)) 
 		    {
