@@ -18,7 +18,7 @@ class BHKW extends IPSModule
         //}
 	//$this->CreateVariableProfile("ESERA.Spannung15V", 2, " V", 0, 15, 0.1, 2, "");
         $this->IPS_CreateVariableProfile("Dierk", 2, " V", 0, 15, 0.1, 2, "");
-	$this->RegisterVariableFloat("AnalogOut1", "Analog Out1", "ESERA.Spannung100V");
+	$this->RegisterVariableFloat("AnalogOut1", "Analog Out1", "Dierk");
 	//$this->ConnectParent("{3CFF0FD9-E306-41DB-9B5A-9D06D38576C3}");
     }
 
