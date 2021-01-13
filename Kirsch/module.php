@@ -20,11 +20,11 @@ class BHKW extends IPSModule
 	    
         $this->IPS_CreateVariableProfile("Kirsch.Kw", 1, " Kw", 0, 0,1, 2, "");
 	$this->IPS_CreateVariableProfile("Kirsch.Status", 1, "", 1, 11, 1, 2, "");
-	    IPS_SetVariableProfileAssociation("Kirsch.Status", 1, "gestoppet", "", 0x00ffff);
-	    IPS_SetVariableProfileAssociation("Kirsch.Status", 2, "startet", "", 0x00ffff);
-	    IPS_SetVariableProfileAssociation("Kirsch.Status", 3, "aufwärmen", "", 0x00ffff);
-	    IPS_SetVariableProfileAssociation("Kirsch.Status", 4, "läuft", "", 0x00ffff);
-	    IPS_SetVariableProfileAssociation("Kirsch.Status", 5, "abkühlen", "", 0x00ffff);
+	    IPS_SetVariableProfileAssociation("Kirsch.Status", 1, "gestoppet", "", 0x7cfc00);
+	    IPS_SetVariableProfileAssociation("Kirsch.Status", 2, "startet", "", 0x7cfc00);
+	    IPS_SetVariableProfileAssociation("Kirsch.Status", 3, "aufwärmen", "", 0x7cfc00);
+	    IPS_SetVariableProfileAssociation("Kirsch.Status", 4, "läuft", "", 0x7cfc00);
+	    IPS_SetVariableProfileAssociation("Kirsch.Status", 5, "abkühlen", "", 0x7cfc00);
 	    IPS_SetVariableProfileAssociation("Kirsch.Status", 10, "Notstop", "", 0xff0000);
 	    IPS_SetVariableProfileAssociation("Kirsch.Status", 11, "Fehler", "", 0xff0000);
 	$this->IPS_CreateVariableProfile("Kirsch.UpM", 1, " UpM", 0, 0, 1, 0, "");
