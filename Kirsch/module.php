@@ -30,7 +30,7 @@ class BHKW extends IPSModule
 	$this->IPS_CreateVariableProfile("Kirsch.UpM", 1, " UpM", 0, 0, 1, 0, "");
 	//$this->RegisterVariableFloat("AnalogOut1", "Analog Out1", "Dierk");  
 
-	//$this->ConnectParent("{3CFF0FD9-E306-41DB-9B5A-9D06D38576C3}");
+	$this->ConnectParent("{3CFF0FD9-E306-41DB-9B5A-9D06D38576C3}");
     }
 
     // Überschreibt die intere IPS_ApplyChanges($id) Funktion
