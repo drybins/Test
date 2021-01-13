@@ -18,16 +18,16 @@ class BHKW extends IPSModule
 	// 7 - Nachkommastellen
 	// 8 - Icon
 	    
-        $this->IPS_CreateVariableProfile("Kw", 1, " Kw", 0, 0,1, 2, "");
-	$this->IPS_CreateVariableProfile("Status", 1, " Kw", 1, 11, 1, 2, "");
-	    IPS_SetVariableProfileAssociation("Status", 1, "gestoppet", "", 0x00ffff);
-	    IPS_SetVariableProfileAssociation("Status", 2, "startet", "", 0x00ffff);
-	    IPS_SetVariableProfileAssociation("Status", 3, "aufwärmen", "", 0x00ffff);
-	    IPS_SetVariableProfileAssociation("Status", 4, "läuft", "", 0x00ffff);
-	    IPS_SetVariableProfileAssociation("Status", 5, "abkühlen", "", 0x00ffff);
-	    IPS_SetVariableProfileAssociation("Status", 10, "Notstop", "", 0xff0000);
-	    IPS_SetVariableProfileAssociation("Status", 11, "Fehler", "", 0xff0000);
-	$this->IPS_CreateVariableProfile("UpM", 1, " UpM", 0, 0, 1, 0, "");
+        $this->IPS_CreateVariableProfile("Kirsch.Kw", 1, " Kw", 0, 0,1, 2, "");
+	$this->IPS_CreateVariableProfile("Kirsch.Status", 1, "", 1, 11, 1, 2, "");
+	    IPS_SetVariableProfileAssociation("Kirsch.Status", 1, "gestoppet", "", 0x00ffff);
+	    IPS_SetVariableProfileAssociation("Kirsch.Status", 2, "startet", "", 0x00ffff);
+	    IPS_SetVariableProfileAssociation("Kirsch.Status", 3, "aufwärmen", "", 0x00ffff);
+	    IPS_SetVariableProfileAssociation("Kirsch.Status", 4, "läuft", "", 0x00ffff);
+	    IPS_SetVariableProfileAssociation("Kirsch.Status", 5, "abkühlen", "", 0x00ffff);
+	    IPS_SetVariableProfileAssociation("Kirsch.Status", 10, "Notstop", "", 0xff0000);
+	    IPS_SetVariableProfileAssociation("Kirsch.Status", 11, "Fehler", "", 0xff0000);
+	$this->IPS_CreateVariableProfile("Kirsch.UpM", 1, " UpM", 0, 0, 1, 0, "");
 	//$this->RegisterVariableFloat("AnalogOut1", "Analog Out1", "Dierk");  
 
 	//$this->ConnectParent("{3CFF0FD9-E306-41DB-9B5A-9D06D38576C3}");
