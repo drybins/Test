@@ -8,17 +8,21 @@ class BHKW extends IPSModule
     {
         // Diese Zeile nicht löschen.
         parent::Create();
-
-        //if(!IPS_VariableProfileExists("Dierk")) {
-        //    IPS_CreateVariableProfile("Dierk", 1);
-        //}
-        //if(!IPS_VARIABLEPROFILEEXISTS("Kw")
-        //{
-        //    IPS_CreateVariableProfile("Kw",1);
-        //}
-	//$this->CreateVariableProfile("ESERA.Spannung15V", 2, " V", 0, 15, 0.1, 2, "");
-        $this->IPS_CreateVariableProfile("Dierk", 2, " V", 0, 15, 0.1, 2, "");
-	$this->RegisterVariableFloat("AnalogOut1", "Analog Out1", "Dierk");
+	
+	// 1 - Profilname
+	// 2 - ProfilTyp 0 - Boolean, 1 - Integer, 2- Float, 3 - String 
+	// 3 - Profil Suffix
+	// 4 - MinValue
+	// 5 - MaxValue 
+	// 6 - Stepsize
+	// 7 - Nachkommastellen
+	// 8 - Icon
+	    
+        $this->IPS_CreateVariableProfile("Kw", 1, " Kw", 0, 0,1, 2, "");
+	$this->IPS_CreateVariableProfile("Status", 1, " Kw", 1, 11, 1, 2, "");
+	    $this->IPS_SetVariableProfileAssociation("Status", 1, "gestoppet", , "LawnGreen");
+	$this->IPS_CreateVariableProfile("UpM", 1, " UpM", 0, 0, 1, 0, "");
+	//$this->RegisterVariableFloat("AnalogOut1", "Analog Out1", "Dierk");
 	//$this->ConnectParent("{3CFF0FD9-E306-41DB-9B5A-9D06D38576C3}");
     }
 
