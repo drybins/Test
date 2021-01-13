@@ -20,7 +20,7 @@ class BHKW extends IPSModule
 	    
         $this->IPS_CreateVariableProfile("Kw", 1, " Kw", 0, 0,1, 2, "");
 	$this->IPS_CreateVariableProfile("Status", 1, " Kw", 1, 11, 1, 2, "");
-	    IPS_SetVariableProfileAssociation("Status", 1, "gestoppet", "", "LawnGreen");
+	    IPS_SetVariableProfileAssociation("Status", 1, "gestoppet", "", 0xff00ff);
 	$this->IPS_CreateVariableProfile("UpM", 1, " UpM", 0, 0, 1, 0, "");
 	//$this->RegisterVariableFloat("AnalogOut1", "Analog Out1", "Dierk");  
 
