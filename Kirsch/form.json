@@ -2,7 +2,7 @@
 	"elements":
 	[
 		{ "type": "Label", "label": "Connection to IP-Symcon" },
-		{ "type": "Labe2", "label": "Port" },
+		{ "type": "Labe1", "label": "Port" },
 		{ "name": "BHKW IP", "type": "ValidationTextBox", "caption": "BHKW IP1" },
 		{ "type": "PasswordTextBox", "name": "webhookpassword", "caption": "webhook password" }
 	]
