@@ -8,7 +8,7 @@
         "BHKW4.12"
     ],
     "url": "https://www.KAT-CS.de",
-    "parentRequirements": [],
+    "parentRequirements": [3CFF0FD9-E306-41DB-9B5A-9D06D38576C3],
     "childRequirements": [],
     "implemented": [],
     "prefix": "BHKW"
