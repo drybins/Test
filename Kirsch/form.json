@@ -2,7 +2,7 @@
     "elements":
     [
         { "type": "ValidationTextBox", "name": "BHKW IP", "caption": "BHKW_IP" },
-        { "type": "ValidationTextBox", "name": "Port", "caption": "Port" },
+        { "type": "ValidationTextBox", "name": "Port", "caption": "Port" }
      ]
 }
 
