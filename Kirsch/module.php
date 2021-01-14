@@ -45,7 +45,7 @@ class BHKW extends IPSModule
     
         public function LogDataBHKW($Text)
 		{
-		IPS_LogMessage("IOTest RECV", "BHKW Started"));
+		IPS_LogMessage("IOTest RECV", "BHKW Started");
 		IPS_LogMessage("IOTest RECV", $Text);
 	}
 
