@@ -9,6 +9,7 @@ class BHKW extends IPSModule
         // Diese Zeile nicht löschen.
         parent::Create();
 	
+	    $this->RegisterPropertyInteger("BHKW_Port", 7603);
 	       	// 1 - Profilname
 	// 2 - ProfilTyp 0 - Boolean, 1 - Integer, 2- Float, 3 - String 
 	// 3 - Profil Suffix
