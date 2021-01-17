@@ -30,7 +30,7 @@ class BHKW extends IPSModule
 	    IPS_SetVariableProfileAssociation("Kirsch.Status", 11, "Fehler", "", 0xff0000);
 	$this->IPS_CreateVariableProfile("Kirsch.UpM", 1, " UpM", 0, 0, 1, 0, "");
 	//$this->RegisterVariableFloat("AnalogOut1", "Analog Out1", "Dierk");  
-
+	    $this->ConnectParent("{3CFF0FD9-E306-41DB-9B5A-9D06D38576C3}");
 	
     }
 
@@ -40,26 +40,38 @@ class BHKW extends IPSModule
         // Diese Zeile nicht löschen
         parent::ApplyChanges();
    
-	    $this->ConnectParent("{3CFF0FD9-E306-41DB-9B5A-9D06D38576C3}");
+
     
     }
-    
-        public function LogDataBHKW($LogText)
-		{
-		IPS_LogMessage("IOTest RECV", "BHKW Started");
-		IPS_LogMessage("IOTest RECV", $LogText);
-	}
 
-    public function ReceiveData($JSONString)
+	public function Send(string $Text)
+		{
+			$this->SendDataToParent(json_encode(Array("DataID" => "{79827379-F36E-4ADA-8A95-5F8D1DC92FA9}", "Buffer" => $Text)));
+		}
+
+	public function ReceiveData($JSONString)
 		{
 			$data = json_decode($JSONString);
-			IPS_LogMessage("IOTest RECV", utf8_decode($data->Buffer));
-
-			//Parse and write values to our variables
-			
-			//Send response back to the splitter
-			return "OK from " . $this->InstanceID;
+			IPS_LogMessage("Device RECV", utf8_decode($data->Buffer));
 		}
+
+    
+ //       public function LogDataBHKW($LogText)
+//		{
+//		IPS_LogMessage("IOTest RECV", "BHKW Started");
+//		IPS_LogMessage("IOTest RECV", $LogText);
+//	}
+
+    //public function ReceiveData($JSONString)
+//		{
+//			$data = json_decode($JSONString);
+//			IPS_LogMessage("IOTest RECV", utf8_decode($data->Buffer));
+//
+//			//Parse and write values to our variables
+//			
+//			//Send response back to the splitter
+//			return "OK from " . $this->InstanceID;
+/7		}
         private function IPS_CreateVariableProfile($ProfileName, $ProfileType, $Suffix, $MinValue, $MaxValue, $StepSize, $Digits, $Icon) 
 	{
 		    if (!IPS_VariableProfileExists($ProfileName)) 
