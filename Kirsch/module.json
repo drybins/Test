@@ -1,15 +1,16 @@
 {
-    "id": "{8F078ABF-D437-8949-7BE3-A27772A1BAA4}",
-    "name": "BHKW",
-    "type": 2,
+    "id": "{51183E50-B1E2-BC25-2376-408E03BFBA11}",
+    "name": "KischBHKW",
+    "type": 3,
     "vendor": "Kirsch",
-    "aliases":
-    [
-        "BHKW 4.12"
+    "aliases": [],
+    "parentRequirements": [
+        "{79827379-F36E-4ADA-8A95-5F8D1DC92FA9}"
     ],
-    "url": "https://www.KAT-CS.de",
-    "parentRequirements": ["{3CFF0FD9-E306-41DB-9B5A-9D06D38576C3}"],
     "childRequirements": [],
-    "implemented": ["{3CFF0FD9-E306-41DB-9B5A-9D06D38576C3}"],
-    "prefix": "BHKW"
+    "implemented": [
+        "{018EF6B5-AB94-40C6-AA53-46943E824ACF}"
+    ],
+    "prefix": "BHKW",
+    "url": ""
 }
