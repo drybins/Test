@@ -1,6 +1,6 @@
 <?php
 // Klassendefinition
-class BHKW extends IPSModule
+class KirschBHKW extends IPSModule
 {
 
     // Überschreibt die interne IPS_Create($id) Funktion
