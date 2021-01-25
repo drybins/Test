@@ -45,7 +45,7 @@
 			if(strlen($data1)>0)
 			{
 				$data = $data1 . $data
-				IPS_LogMessage("Splitter Dataeingang", $data);
+				IPS_LogMessage("Splitter Data_eingang", $data);
 			}
 			$start = strpos($data,"<",5);
 			$end = strpos($data,">",$start);
@@ -61,7 +61,7 @@
 			else
 			{
 				IPS_LogMessage("Splitter cmdstart", substr($data,0,5));
-				if(substr($data,0,5) == "<?xml")
+				if(strcmp(substr($data,0,5),"<?xml") == 0)
 				{
 					$this->SetBuffer("dataBuffer",$data);
 				}
