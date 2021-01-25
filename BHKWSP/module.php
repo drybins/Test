@@ -44,7 +44,7 @@
 			$data1 = $this->GetBuffer("dataBuffer");
 			if(strlen($data1)>0)
 			{
-				$data = $data1 . $data
+				$data = $data1 . $data;
 				IPS_LogMessage("Splitter Data_eingang", $data);
 			}
 			$start = strpos($data,"<",5);
@@ -52,20 +52,20 @@
 			$cmd = substr($data, $start+1, $end-$start-1);
 			IPS_LogMessage("Splitter CMD", $cmd);
 			$cmdend = strpos($data, "/" . $cmd,0);
-			//if($cmdend >0)
-			//{
+			if($cmdend >0)
+			{
 				$cmdend = $cmdend + strlen($cmd) + 2;
 				$cmdparm = substr($data,0,$cmdend);
 				IPS_LogMessage("Splitter CMDParm", $cmdparm);
-			//}
-			//else
-			//{
-			//	IPS_LogMessage("Splitter cmdstart", substr($data,0,5));
-				//if(strcmp(substr($data,0,5),"<?xml") == 0)
-				//{
-			//		$this->SetBuffer("dataBuffer",$data);
-				//}
-			//}
+			}
+			/lse
+			{
+				IPS_LogMessage("Splitter cmdstart", substr($data,0,5));
+				if(strcmp(substr($data,0,5),"<?xml") == 0)
+				{
+					$this->SetBuffer("dataBuffer",$data);
+				}
+			}
 			
 		}
 	}
