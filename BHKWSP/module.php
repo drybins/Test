@@ -61,10 +61,10 @@
 			else
 			{
 				IPS_LogMessage("Splitter cmdstart", substr($data,0,5));
-				if(strcmp(substr($data,0,5),"<?xml") == 0)
-				{
+				//if(strcmp(substr($data,0,5),"<?xml") == 0)
+				//{
 					$this->SetBuffer("dataBuffer",$data);
-				}
+				//}
 			}
 			
 		}
