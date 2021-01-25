@@ -43,7 +43,7 @@
 		{
 			$start = strpos($data,"<",5);
 			$end = strpos($data,">",$start);
-			$cmd = substr($data, $start, $end-$start);
+			$cmd = substr($data, $start+1, $end-$start-1);
 			IPS_LogMessage("Splitter CMD", $cmd);
 			
 		}
