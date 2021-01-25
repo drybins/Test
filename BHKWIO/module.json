@@ -1,15 +1,15 @@
 {
-    "id": "{B14329A5-ADE5-6C71-A3BB-9399E6B8A7B2}",
+    "id": "{2E0610B0-8B19-6B05-D052-7D7C698C568F}",
     "name": "BHKWIO",
     "type": 1,
     "vendor": "Kirsch",
     "aliases": [],
     "parentRequirements": [],
     "childRequirements": [
-        "{C2996E30-4A35-F5D7-1DDB-4A2ACB444CA5}"
+        "{1669BF3B-A63B-3D1A-8D40-854D326A2F9E}"
     ],
     "implemented": [
-        "{D6954D02-CBD9-0E4C-380A-E21BE7A8BB02}"
+        "{79BE64E3-FBCE-F75B-B7A9-55D7C02A4A1F}"
     ],
     "prefix": "BHKWIO",
     "url": ""
