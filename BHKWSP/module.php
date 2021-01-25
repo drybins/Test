@@ -36,7 +36,7 @@
 			$data = json_decode($JSONString);
 			IPS_LogMessage("Splitter RECV", utf8_decode($data->Buffer));
 			$this->DRTEST(utf8_decode($data->Buffer));
-			//$this->SendDataToChildren(json_encode(Array("DataID" => "{185A67F4-5748-3EE1-4EED-CAF56975F21B}", "Buffer" => $data->Buffer)));
+			$this->SendDataToChildren(json_encode(Array("DataID" => "{185A67F4-5748-3EE1-4EED-CAF56975F21B}", "Buffer" => $data->Buffer)));
 		}
 		
 		public function DRTEST($data)
