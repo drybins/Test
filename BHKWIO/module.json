@@ -6,10 +6,10 @@
     "aliases": [],
     "parentRequirements": [],
     "childRequirements": [
-        "{1669BF3B-A63B-3D1A-8D40-854D326A2F9E}"
+        "{683476B1-08B4-682B-EF58-B892247FC2E1}"
     ],
     "implemented": [
-        "{79BE64E3-FBCE-F75B-B7A9-55D7C02A4A1F}"
+        "{A09E79EE-6EAD-BA75-6F69-0CA8D7B36991}"
     ],
     "prefix": "BHKWIO",
     "url": ""
