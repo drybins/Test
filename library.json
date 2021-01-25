@@ -1,12 +1,12 @@
 {
-	"id": "{AACA71FA-C9F7-3ABB-1E51-2E4FEBE7D415}",
-	"author": "Dierk Rybinski EDV-Beratung",
-	"name": "Heizungs Module",
-	"url": "www.Rybinski-EDV.de",
-	"compatibility": {
-		"version": "4.2"
-	},
-	"version": "1.0",
-	"build": 0,
-	"date": 0
+    "id": "{2D177F8A-D937-33B9-FBB2-2724D5DE5FA8}",
+    "name": "Heizung",
+    "author": "KAT-CS",
+    "url": "",
+    "compatibility": {
+        "version": "5.0"
+    },
+    "version": "1.0",
+    "build": 0,
+    "date": 0
 }
