@@ -41,8 +41,9 @@
 		
 		public function DRTEST($data)
 		{
-			$end = strpos($data,">",30);
-			$cmd = substr($data, 30, $end-30);
+			$start = strpos($data,"<",5);
+			$end = strpos($data,">",$start);
+			$cmd = substr($data, $start, $end-$start);
 			IPS_LogMessage("Splitter CMD", $cmd);
 			
 		}
