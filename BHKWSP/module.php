@@ -36,7 +36,7 @@
 			$data = json_decode($JSONString);
 			IPS_LogMessage("Splitter RECV", utf8_decode($data->Buffer));
 
-			$this->SendDataToChildren(json_encode(Array("DataID" => "{197A0586-AE0A-7AAA-A7C8-E1704A78250B}", "Buffer" => $data->Buffer)));
+			$this->SendDataToChildren(json_encode(Array("DataID" => "{0B69414C-745C-B89D-FBAC-4932381406A0}", "Buffer" => $data->Buffer)));
 		}
 
 	}
