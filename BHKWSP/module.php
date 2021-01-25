@@ -41,6 +41,7 @@
 		
 		public function DRTEST($data)
 		{
+			$data1 = $this->GetBuffer("dataBuffer");
 			if(strlen($data1)>0)
 			{
 				IPS_LogMessage("Splitter Data1", $data1);
@@ -58,7 +59,7 @@
 			}
 			else
 			{
-				$data1 = $data;
+				$this->SetBuffer("dataBuffer",$data);
 			}
 			
 		}
