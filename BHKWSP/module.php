@@ -41,14 +41,25 @@
 		
 		public function DRTEST($data)
 		{
+			if(strlen($data1)>0)
+			{
+				IPS_LogMessage("Splitter Data1", $data1);
+			}
 			$start = strpos($data,"<",5);
 			$end = strpos($data,">",$start);
 			$cmd = substr($data, $start+1, $end-$start-1);
 			IPS_LogMessage("Splitter CMD", $cmd);
 			$cmdend = strpos($data, "/" . $cmd,0);
-			$cmdend = $cmdend + strlen($cmd) + 2;
-			$cmdparm = substr($data,0,$cmdend);
-			IPS_LogMessage("Splitter CMDParm", $cmdparm);
+			if($cmdend >0)
+			{
+				$cmdend = $cmdend + strlen($cmd) + 2;
+				$cmdparm = substr($data,0,$cmdend);
+				IPS_LogMessage("Splitter CMDParm", $cmdparm);
+			}
+			else
+			{
+				$data1 = $data;
+			}
 			
 		}
 	}
