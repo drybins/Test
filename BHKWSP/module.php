@@ -58,7 +58,7 @@
 				$cmdparm = substr($data,0,$cmdend);
 				IPS_LogMessage("Splitter CMDParm", $cmdparm);
 			}
-			/lse
+			else
 			{
 				IPS_LogMessage("Splitter cmdstart", substr($data,0,5));
 				if(strcmp(substr($data,0,5),"<?xml") == 0)
