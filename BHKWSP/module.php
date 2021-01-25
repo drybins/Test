@@ -46,6 +46,7 @@
 			$cmd = substr($data, $start+1, $end-$start-1);
 			IPS_LogMessage("Splitter CMD", $cmd);
 			$cmdend = strpos($data, "/" . $cmd,0);
+			$cmdend = $cmdend + strlen($cmd) + 2;
 			$cmdparm = substr($data,0,$cmdend);
 			IPS_LogMessage("Splitter CMDParm", $cmdparm);
 			
