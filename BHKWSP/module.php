@@ -57,12 +57,14 @@
 				$cmdend = $cmdend + strlen($cmd) + 2;
 				$cmdparm = substr($data,0,$cmdend);
 				//IPS_LogMessage("Splitter CMDParm", $cmdparm);
-				//switch $cmd
+				switch ($cmd)
+				{
 				//case "statePP"
 					//$this->statePP($cmdparm);
 				//	break;
 				//default:
 				//	break;
+				}
 			}
 			else
 			{
