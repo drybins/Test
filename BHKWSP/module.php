@@ -43,17 +43,23 @@
 			$bufferParts = explode("\r\n", $bufferData);
 
 		//Letzten Eintrag nicht auswerten, da dieser nicht vollständig ist.
-		if(sizeof($bufferParts) > 1) {
-			for($i=0; $i<sizeof($bufferParts)-1; $i++) 
+		if(sizeof($bufferParts) > 1) 
 			{
-				IPS_LogMessage("Splitter bufferParts", $i . ":" .$bufferParts[$i]);
-				//$this->SendDebug("Data", $bufferParts[$i], 0);
-				//$this->AnalyseData($bufferParts[$i]);
+				for($i=0; $i<sizeof($bufferParts)-1; $i++) 
+				{
+					IPS_LogMessage("Splitter bufferParts", $i . ":" . $bufferParts[$i]);
+					//$this->SendDebug("Data", $bufferParts[$i], 0);
+					//$this->AnalyseData($bufferParts[$i]);
+				}
 			}
-		}
+			$bufferData = $bufferParts[sizeof($bufferParts)-1];
+
+			//Übriggebliebene Daten auf den Buffer schreiben
+			$this->SetBuffer("DataBuffer", $bufferData);
 			//$this->DRTEST(utf8_decode($data->Buffer));
 			//$this->SendDataToChildren(json_encode(Array("DataID" => "{185A67F4-5748-3EE1-4EED-CAF56975F21B}", "Buffer" => $data->Buffer)));
 		}
+		
 		
 		public function DRTEST(string $data)
 		{
