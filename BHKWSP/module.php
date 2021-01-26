@@ -45,7 +45,7 @@
 			if(strlen($data1)>0)
 			{
 				$data = $data1 . $data;
-				//IPS_LogMessage("Splitter Data_eingang", $data);
+				IPS_LogMessage("Splitter Data_eingang", $data);
 			}
 			$start = strpos($data,"<",5);
 			$end = strpos($data,">",$start);
