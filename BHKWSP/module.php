@@ -91,6 +91,6 @@
 			//$SatusID = $this->GetIDForIdent("KirschStatus");
 			//IPS_LogMessage("Splitter statePP StatusID", $StatusID);
 			$ScriptData['STATUS'] = (string) $xmlData->common[0]->state;
-			$this->SendDataToChildren(json_encode(Array("DataID" => "{185A67F4-5748-3EE1-4EED-CAF56975F21B}", "Buffer" => $ScriptData['STATUS']->Buffer)));
+			$this->SendDataToChildren(json_encode(Array("DataID" => "{185A67F4-5748-3EE1-4EED-CAF56975F21B}", "Buffer" => $cmd->Buffer)));
 		}
 	}
