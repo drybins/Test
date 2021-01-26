@@ -34,9 +34,9 @@
 		public function ReceiveData($JSONString)
 		{
 			$data = json_decode($JSONString);
-			IPS_LogMessage("Splitter RECV", utf8_decode($data->Buffer));
+			//IPS_LogMessage("Splitter RECV", utf8_decode($data->Buffer));
 			$this->DRTEST(utf8_decode($data->Buffer));
-			$this->SendDataToChildren(json_encode(Array("DataID" => "{185A67F4-5748-3EE1-4EED-CAF56975F21B}", "Buffer" => $data->Buffer)));
+			//$this->SendDataToChildren(json_encode(Array("DataID" => "{185A67F4-5748-3EE1-4EED-CAF56975F21B}", "Buffer" => $data->Buffer)));
 		}
 		
 		public function DRTEST($data)
@@ -45,18 +45,24 @@
 			if(strlen($data1)>0)
 			{
 				$data = $data1 . $data;
-				IPS_LogMessage("Splitter Data_eingang", $data);
+				//IPS_LogMessage("Splitter Data_eingang", $data);
 			}
 			$start = strpos($data,"<",5);
 			$end = strpos($data,">",$start);
 			$cmd = substr($data, $start+1, $end-$start-1);
-			IPS_LogMessage("Splitter CMD", $cmd);
+			//IPS_LogMessage("Splitter CMD", $cmd);
 			$cmdend = strpos($data, "/" . $cmd,0);
 			if($cmdend >0)
 			{
 				$cmdend = $cmdend + strlen($cmd) + 2;
 				$cmdparm = substr($data,0,$cmdend);
-				IPS_LogMessage("Splitter CMDParm", $cmdparm);
+				//IPS_LogMessage("Splitter CMDParm", $cmdparm);
+				switch $cmd
+				case "statePP"
+					$this->statePP($cmdparm);
+					break;
+				default:
+					break;
 			}
 			else
 			{
@@ -66,6 +72,10 @@
 					$this->SetBuffer("dataBuffer",$data);
 				}
 			}
-			
+		}
+		
+		public function statePP($cmd)
+		{
+			IPS_LogMessage("Splitter statePP", $cmd);
 		}
 	}
