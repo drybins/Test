@@ -81,7 +81,7 @@
 		{
 			IPS_LogMessage("Splitter statePP", $cmd);
 			
-			$xmlData = @new SimpleXMLElement(utf8_encode($daten), LIBXML_NOBLANKS + LIBXML_NONET);
+			$xmlData = @new SimpleXMLElement(utf8_encode($cmd), LIBXML_NOBLANKS + LIBXML_NONET);
 			$SatusID = $this->GetIDForIdent("KirschStatus");
 			IPS_LogMessage("Splitter statePP StatusID", $StatusID);
 			$ScriptData['STATUS'] = (string) $xmlData->common[0]->state;
