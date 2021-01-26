@@ -51,7 +51,7 @@
 				{
 					//IPS_LogMessage("Splitter bufferParts", $i . ":" . $bufferParts[$i]);
 					//$this->SendDebug("Data", $bufferParts[$i], 0);
-					$this->AnalyseData($bufferParts[$i]);
+					$this->AnalyseData($delimeter . $bufferParts[$i]);
 				}
 			}
 			$bufferData = $bufferParts[sizeof($bufferParts)-1];
@@ -65,6 +65,7 @@
 		
 		public function AnalyseData(string $data)
 		{
+			IPS_LogMessage("Splitter data", $data);
 			$start = strpos($data,"<",5);
 			$end = strpos($data,">",$start);
 			$cmd = substr($data, $start+1, $end-$start-1);
