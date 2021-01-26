@@ -59,7 +59,7 @@
 				//IPS_LogMessage("Splitter CMDParm", $cmdparm);
 				switch ($cmd)
 				{
-					case "statePP"
+					case "statePP":
 						$this->statePP($cmdparm);
 						break;
 					default:
