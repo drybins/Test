@@ -59,7 +59,7 @@
 			//Übriggebliebene Daten auf den Buffer schreiben
 			$this->SetBuffer("DataBuffer", $bufferData);
 			//$this->DRTEST(utf8_decode($data->Buffer));
-			$this->SendDataToChildren(json_encode(Array("DataID" => "{185A67F4-5748-3EE1-4EED-CAF56975F21B}", "Buffer" => $data->Buffer)));
+			//$this->SendDataToChildren(json_encode(Array("DataID" => "{185A67F4-5748-3EE1-4EED-CAF56975F21B}", "Buffer" => $data->Buffer)));
 		}
 		
 		
@@ -91,6 +91,7 @@
 			//$SatusID = $this->GetIDForIdent("KirschStatus");
 			//IPS_LogMessage("Splitter statePP StatusID", $StatusID);
 			$ScriptData['STATUS'] = (string) $xmlData->common[0]->state;
-			//$this->SendDataToChildren(json_encode(Array("DataID" => "{185A67F4-5748-3EE1-4EED-CAF56975F21B}", "Buffer" => $cmd->Buffer)));
+			$data = $cmd;
+			$this->SendDataToChildren(json_encode(Array("DataID" => "{185A67F4-5748-3EE1-4EED-CAF56975F21B}", "Buffer" => $data->Buffer)));
 		}
 	}
