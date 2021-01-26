@@ -40,7 +40,9 @@
 			$bufferData .= $data->Buffer;
 			IPS_LogMessage("Splitter bufferData", $bufferData);
 			
-			$bufferParts = explode("\r\n", $bufferData);
+			$delimeter = '<?xml version="1.0" encoding="UTF-8"?>';
+			$bufferParts = explode($delimeter, $bufferData);	
+			//$bufferParts = explode("\r\n", $bufferData);
 
 		//Letzten Eintrag nicht auswerten, da dieser nicht vollständig ist.
 		if(sizeof($bufferParts) > 1) 
