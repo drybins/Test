@@ -39,7 +39,7 @@
 			//$this->SendDataToChildren(json_encode(Array("DataID" => "{185A67F4-5748-3EE1-4EED-CAF56975F21B}", "Buffer" => $data->Buffer)));
 		}
 		
-		public function DRTEST($data)
+		public function DRTEST(string $data)
 		{
 			$data1 = $this->GetBuffer("dataBuffer");
 			if(strlen($data1)>0)
@@ -59,11 +59,11 @@
 				//IPS_LogMessage("Splitter CMDParm", $cmdparm);
 				switch ($cmd)
 				{
-				//case "statePP"
-					//$this->statePP($cmdparm);
-				//	break;
-				//default:
-				//	break;
+					case "statePP"
+						$this->statePP($cmdparm);
+						break;
+					default:
+						break;
 				}
 			}
 			else
@@ -76,7 +76,7 @@
 			}
 		}
 		
-		public function statePP($cmd)
+		public function statePP(string $cmd)
 		{
 			IPS_LogMessage("Splitter statePP", $cmd);
 		}
