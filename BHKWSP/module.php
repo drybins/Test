@@ -49,9 +49,9 @@
 			{
 				for($i=0; $i<sizeof($bufferParts)-1; $i++) 
 				{
-					IPS_LogMessage("Splitter bufferParts", $i . ":" . $bufferParts[$i]);
+					//IPS_LogMessage("Splitter bufferParts", $i . ":" . $bufferParts[$i]);
 					//$this->SendDebug("Data", $bufferParts[$i], 0);
-					//$this->AnalyseData($bufferParts[$i]);
+					$this->AnalyseData($bufferParts[$i]);
 				}
 			}
 			$bufferData = $bufferParts[sizeof($bufferParts)-1];
@@ -63,44 +63,24 @@
 		}
 		
 		
-		public function DRTEST(string $data)
+		public function AnalyseData(string $data)
 		{
-			$data1 = $this->GetBuffer("dataBuffer");
-			if(strlen($data1)>0)
-			{
-				$data = $data1 . $data;
-				IPS_LogMessage("Splitter Data_eingang", $data);
-			}
 			$start = strpos($data,"<",5);
 			$end = strpos($data,">",$start);
 			$cmd = substr($data, $start+1, $end-$start-1);
-			//IPS_LogMessage("Splitter CMD", $cmd);
-			$cmdend = strpos($data, "/" . $cmd,0);
-			$cmdrest = substr($data, $cmdend);
-			IPS_LogMessage("Splitter CMDrest", $cmdrest);
-			if($cmdend >0)
-			{
-				$cmdend = $cmdend + strlen($cmd) + 2;
-				$cmdparm = substr($data,0,$cmdend);
+			IPS_LogMessage("Splitter CMD", $cmd);
+
 				//IPS_LogMessage("Splitter CMD", $cmd);
 				switch ($cmd)
 				{
 					case "statePP":
-						$this->statePP($cmdparm);
+						$this->statePP($data);
 						break;
 					default:
 						break;
 				}
 			}
-			else
-			{
-				IPS_LogMessage("Splitter cmdstart", substr($data,0,5));
-				if(strcmp(substr($data,0,5),"<?xml") == 0)
-				{
-					$this->SetBuffer("dataBuffer",$data);
-				}
-			}
-		}
+
 		
 		public function statePP(string $cmd)
 		{
