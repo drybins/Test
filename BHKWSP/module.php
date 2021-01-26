@@ -50,14 +50,14 @@
 			$start = strpos($data,"<",5);
 			$end = strpos($data,">",$start);
 			$cmd = substr($data, $start+1, $end-$start-1);
-			IPS_LogMessage("Splitter CMD", $cmd);
+			//IPS_LogMessage("Splitter CMD", $cmd);
 			$cmdend = strpos($data, "/" . $cmd,0);
-			IPS_LogMessage("Splitter CMDend", $cmdend);
+			//IPS_LogMessage("Splitter CMDend", $cmdend);
 			if($cmdend >0)
 			{
 				$cmdend = $cmdend + strlen($cmd) + 2;
 				$cmdparm = substr($data,0,$cmdend);
-				IPS_LogMessage("Splitter CMD", $cmd);
+				//IPS_LogMessage("Splitter CMD", $cmd);
 				switch ($cmd)
 				{
 					case "statePP":
@@ -80,5 +80,37 @@
 		public function statePP(string $cmd)
 		{
 			IPS_LogMessage("Splitter statePP", $cmd);
+			
+			$xmlData = @new SimpleXMLElement(utf8_encode($daten), LIBXML_NOBLANKS + LIBXML_NONET);
+			$SatusID = $this->GetIDForIdent("KirschStatus");
+			IPS_LogMessage("Splitter statePP StatusID", $StatusID);
+			$ScriptData['STATUS'] = (string) $xmlData->common[0]->state;
+			switch ($ScriptData['STATUS']) 
+			{
+				case "stop":
+					SetValueInteger ($SatusID, 1);
+					break;
+				case "start":
+					SetValueInteger ($SatusID, 2);
+					break;
+				case "warmup":
+					SetValueInteger ($SatusID, 3);
+					break;
+				case "running":
+					SetValueInteger ($SatusID, 4);
+					break;
+				case "cooldown":
+					SetValueInteger ($SatusID, 5);
+					break;
+				case "emergencystop":
+					SetValueInteger ($SatusID, 10);
+					break;  
+				case "error":
+					SetValueInteger ($SatusID, 11);
+					break;         
+				default:
+					//SetValueString (14320 , "Status nicht gefunden:" . $ScriptData['STATUS']);
+					IPS_LogMessage("Splitter statePP status nicht gefunden", $cmd);
+			}
 		}
 	}
