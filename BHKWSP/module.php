@@ -56,7 +56,7 @@
 			{
 				$cmdend = $cmdend + strlen($cmd) + 2;
 				$cmdparm = substr($data,0,$cmdend);
-				//IPS_LogMessage("Splitter CMDParm", $cmdparm);
+				IPS_LogMessage("Splitter CMD", $cmd);
 				switch ($cmd)
 				{
 					case "statePP":
