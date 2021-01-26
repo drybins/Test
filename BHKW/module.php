@@ -5,8 +5,19 @@
 		{
 			//Never delete this line!
 			parent::Create();
+			
+			    $this->IPS_CreateVariableProfile("Kirsch.UpM", 1, " UpM", 0, 0, 1, 0, "");
+				$this->IPS_CreateVariableProfile("Kirsch.Kw", 1, " Kw", 0, 0,1, 2, "");
+				$this->IPS_CreateVariableProfile("Kirsch.Status", 1, "", 1, 11, 1, 2, "");
+				IPS_SetVariableProfileAssociation("Kirsch.Status", 1, "gestoppet", "", 0x7cfc00);
+				IPS_SetVariableProfileAssociation("Kirsch.Status", 2, "startet", "", 0x7cfc00);
+				IPS_SetVariableProfileAssociation("Kirsch.Status", 3, "aufwärmen", "", 0x7cfc00);
+				IPS_SetVariableProfileAssociation("Kirsch.Status", 4, "läuft", "", 0x7cfc00);
+				IPS_SetVariableProfileAssociation("Kirsch.Status", 5, "abkühlen", "", 0x7cfc00);
+				IPS_SetVariableProfileAssociation("Kirsch.Status", 10, "Notstop", "", 0xff0000);
+				IPS_SetVariableProfileAssociation("Kirsch.Status", 11, "Fehler", "", 0xff0000);				
 
-			$this->ConnectParent("{33B9B2D7-6BC5-1CF6-A86F-E76622A7FFB7}");
+				$this->ConnectParent("{33B9B2D7-6BC5-1CF6-A86F-E76622A7FFB7}");
 		}
 
 		public function Destroy()
@@ -31,5 +42,17 @@
 			$data = json_decode($JSONString);
 			IPS_LogMessage("Device RECV", utf8_decode($data->Buffer));
 		}
+		
+		        private function IPS_CreateVariableProfile($ProfileName, $ProfileType, $Suffix, $MinValue, $MaxValue, $StepSize, $Digits, $Icon) 
+	{
+		    if (!IPS_VariableProfileExists($ProfileName)) 
+		    {
+			       IPS_CreateVariableProfile($ProfileName, $ProfileType);
+			       IPS_SetVariableProfileText($ProfileName, "", $Suffix);
+			       IPS_SetVariableProfileValues($ProfileName, $MinValue, $MaxValue, $StepSize);
+			       IPS_SetVariableProfileDigits($ProfileName, $Digits);
+			       IPS_SetVariableProfileIcon($ProfileName, $Icon);
+		    }
+	 }
 
 	}
