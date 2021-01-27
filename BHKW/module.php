@@ -42,14 +42,31 @@
 		public function ReceiveData($JSONString)
 		{
 			$data = json_decode($JSONString);
-			$cmd = utf8_decode($data->Buffer);
-			IPS_LogMessage("Device RECV", $cmd);
+			$data = utf8_decode($data->Buffer);
+			//IPS_LogMessage("Device RECV", $cmd);
 			//IPS_LogMessage("Device RECV", utf8_decode($data->Buffer));
 			
+			$start = strpos($data,"<",5);
+			$end = strpos($data,">",$start);
+			$cmd = substr($data, $start+1, $end-$start-1);
+			IPS_LogMessage("Splitter CMD", $cmd);
+
+			switch ($cmd)
+			{
+				case "statePP":
+					$this->statePP($data);
+					break;
+				default:
+					break;
+			}
+			
+			
+		}
+		
+		public function statePP($data)
+		{
 			$xmlData = @new SimpleXMLElement(utf8_encode($cmd), LIBXML_NOBLANKS + LIBXML_NONET);
-			//$xmlData = @new SimpleXMLElement($cmd, LIBXML_NOBLANKS + LIBXML_NONET);
-			$StatusID = $this->GetIDForIdent("KirschStatus");
-			IPS_LogMessage("BHKW statePP StatusID", $StatusID);
+			$ScriptData['STATUS'] = (string) $xmlData->common[0]->state;
 		}
 		
 		        private function IPS_CreateVariableProfile($ProfileName, $ProfileType, $Suffix, $MinValue, $MaxValue, $StepSize, $Digits, $Icon) 
