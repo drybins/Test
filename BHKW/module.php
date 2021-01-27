@@ -110,6 +110,11 @@
 			default:
 				//SetValueString (14320 , "Status nicht gefunden:" . $ScriptData['STATUS']);
 			}
+			
+			$ScriptData['TP'] = (string) $xmlData->common[0]->targetPower;
+			SetValueInteger ($this->GetIDForIdent("Zielleistung"), $ScriptData['TP']);
+			$ScriptData['RL'] = (string) $xmlData->common[0]->referencePower*1000;
+			SetValueInteger ($this->GetIDForIdent("Referenzleistung"), $ScriptData['RL']);
 		}
 		
 		private function IPS_CreateVariableProfile($ProfileName, $ProfileType, $Suffix, $MinValue, $MaxValue, $StepSize, $Digits, $Icon) 
