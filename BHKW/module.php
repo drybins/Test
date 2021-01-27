@@ -67,6 +67,36 @@
 		{
 			$xmlData = @new SimpleXMLElement(utf8_encode($data), LIBXML_NOBLANKS + LIBXML_NONET);
 			$ScriptData['STATUS'] = (string) $xmlData->common[0]->state;
+			
+			$StatusID = $this->GetIDForIdent("KirschStatus");
+			IPS_LogMessage("BHKW statePP StatusID", $StatusID);
+			
+			switch ($ScriptData['STATUS']) 
+			{
+				case "stop":
+				SetValueInteger ($StatusID, 1);
+				break;
+			case "start":
+				SetValueInteger ($StatusID, 2);
+				break;
+			case "warmup":
+				SetValueInteger ($StatusID, 3);
+				break;
+			case "running":
+				SetValueInteger ($StatusID, 4);
+				break;
+			case "cooldown":
+				SetValueInteger ($StatusID, 5);
+				break;
+			case "emergencystop":
+				SetValueInteger ($StatusID, 10);
+				break;  
+			case "error":
+				SetValueInteger ($StatusID, 11);
+				break;         
+			default:
+				//SetValueString (14320 , "Status nicht gefunden:" . $ScriptData['STATUS']);
+			}
 		}
 		
 		private function IPS_CreateVariableProfile($ProfileName, $ProfileType, $Suffix, $MinValue, $MaxValue, $StepSize, $Digits, $Icon) 
