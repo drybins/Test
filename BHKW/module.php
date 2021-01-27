@@ -119,8 +119,8 @@
 			$ScriptData['RL'] = (string) $xmlData->common[0]->referencePower*1000;
 			SetValueInteger ($this->GetIDForIdent("Referenzleistung"), $ScriptData['RL']);
 			//Wirkleistung
-			$ScriptData['E7'] = (Float) $xmlData->electric[0]->E7;
-			SetValue ($this->GetIDForIdent("Wirkleistung"), $ScriptData['E7'])
+			$ScriptData['E7'] = (integer) $xmlData->electric[0]->E7;
+			SetValue ($this->GetIDForIdent("Wirkleistung"), $ScriptData['E7']);
 			
 			/*$ScriptData['OelT'] =  (string) $xmlData->sensors[0]->TI4;
 			SetValueFloat ($this->GetIDForIdent("Oeltemperatur"), $ScriptData['OelT']);
