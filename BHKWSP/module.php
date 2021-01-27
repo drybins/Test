@@ -43,7 +43,7 @@
 			$delimeter = '<?xml version="1.0" encoding="UTF-8"?>';
 			$bufferParts = explode($delimeter, $bufferData);	
 			//$bufferParts = explode("\r\n", $bufferData);
-
+			IPS_LogMessage("Splitter bufferParts start" . ":" . $bufferParts[0]);
 		//Letzten Eintrag nicht auswerten, da dieser nicht vollständig ist.
 		if(sizeof($bufferParts) > 1) 
 			{
