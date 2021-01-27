@@ -122,14 +122,14 @@
 			$ScriptData['E7'] = (Float) $xmlData->electric[0]->E7;
 			SetValue ($this->GetIDForIdent("Wirkleistung"), $ScriptData['E7'])
 			
-			$ScriptData['OelT'] =  (string) $xmlData->sensors[0]->TI4;
+			/*$ScriptData['OelT'] =  (string) $xmlData->sensors[0]->TI4;
 			SetValueFloat ($this->GetIDForIdent("Oeltemperatur"), $ScriptData['OelT']);
 			$ScriptData['HW'] =  (string) $xmlData->sensors[0]->TI3;
 			SetValueFloat($this->GetIDForIdent("Heizwasser") , $ScriptData['HW']);
 			$ScriptData['AT'] =  (string) $xmlData->sensors[0]->TI5;
 			SetValueFloat ($this->GetIDForIdent("Abgasteperatur") , $ScriptData['AT']);
 			$ScriptData['GT'] =  (string) $xmlData->sensors[0]->TI6;
-			SetValueFloat ($this->GetIDForIdent("Gehaeusetemperatur") , $ScriptData['GT']);
+			SetValueFloat ($this->GetIDForIdent("Gehaeusetemperatur") , $ScriptData['GT']);*/
 			
 		}
 		
