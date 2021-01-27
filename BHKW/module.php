@@ -111,11 +111,11 @@
 			default:
 				//SetValueString (14320 , "Status nicht gefunden:" . $ScriptData['STATUS']);
 			}
-			/*
+			
 			// Target Power
 			$ScriptData['TP'] = (string) $xmlData->common[0]->targetPower;
-			SetValueInteger ($this->GetIDForIdent("Zielleistung"), $ScriptData['TP']);
-			//Referenzleistung
+			SetValueInteger ($this->GetIDForIdent("Zielleistung"), $ScriptData['TP']); 
+			/*//Referenzleistung
 			$ScriptData['RL'] = (string) $xmlData->common[0]->referencePower*1000;
 			SetValueInteger ($this->GetIDForIdent("Referenzleistung"), $ScriptData['RL']);
 			//Wirkleistung
