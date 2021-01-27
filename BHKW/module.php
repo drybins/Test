@@ -49,7 +49,7 @@
 			$xmlData = @new SimpleXMLElement(utf8_encode($cmd), LIBXML_NOBLANKS + LIBXML_NONET);
 			//$xmlData = @new SimpleXMLElement($cmd, LIBXML_NOBLANKS + LIBXML_NONET);
 			$StatusID = $this->GetIDForIdent("KirschStatus");
-			/IPS_LogMessage("BHKW statePP StatusID", $StatusID);
+			IPS_LogMessage("BHKW statePP StatusID", $StatusID);
 		}
 		
 		        private function IPS_CreateVariableProfile($ProfileName, $ProfileType, $Suffix, $MinValue, $MaxValue, $StepSize, $Digits, $Icon) 
