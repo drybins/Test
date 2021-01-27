@@ -76,7 +76,7 @@
 			
 		}
 		
-		public function statePP($data)
+		private function statePP($data)
 		{
 			$xmlData = @new SimpleXMLElement(utf8_encode($data), LIBXML_NOBLANKS + LIBXML_NONET);
 			
@@ -130,6 +130,13 @@
 			SetValueFloat ($this->GetIDForIdent("Abgasteperatur") , $ScriptData['AT']);
 			$ScriptData['GT'] =  (float) $xmlData->sensors[0]->TI6;
 			SetValueFloat ($this->GetIDForIdent("Gehaeusetemperatur") , $ScriptData['GT']);
+			
+			$ScriptData['S1'] =  (Float) $xmlData->sensors[0]->S1;
+			SetValue ($this->GetIDForIdent("Motordrehzahl")  , $ScriptData['S1']);
+			$ScriptData['P1'] =  (Float) $xmlData->actors[0]->P1;
+			SetValue ($this->GetIDForIdent("Speicherladepumpe")  , $ScriptData['P1']);
+			$ScriptData['V2'] =  (Float) $xmlData->actors[0]->V2;
+			SetValue ($this->GetIDForIdent("Drosselklapenstellung")  , $ScriptData['V2']);
 			
 		}
 		
