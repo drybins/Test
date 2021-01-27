@@ -46,8 +46,8 @@
 			IPS_LogMessage("Device RECV", $cmd);
 			//IPS_LogMessage("Device RECV", utf8_decode($data->Buffer));
 			
-			//$xmlData = @new SimpleXMLElement(utf8_encode($data), LIBXML_NOBLANKS + LIBXML_NONET);
-			$xmlData = @new SimpleXMLElement($data, LIBXML_NOBLANKS + LIBXML_NONET);
+			$xmlData = @new SimpleXMLElement(utf8_encode($cmd), LIBXML_NOBLANKS + LIBXML_NONET);
+			//$xmlData = @new SimpleXMLElement($cmd, LIBXML_NOBLANKS + LIBXML_NONET);
 			$SatusID = $this->GetIDForIdent("KirschStatus");
 			IPS_LogMessage("BHKW statePP StatusID", $StatusID);
 		}
