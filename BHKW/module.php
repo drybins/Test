@@ -23,8 +23,8 @@
 				$this->RegisterVariableInteger("Zielleistung", "Zielleistung", "Kirsch.Kw", 15);
 				$this->RegisterVariableInteger("Referenzleistung", "Referenz Leistung", "Kirsch.Watt", 20);
 				$this->RegisterVariableInteger("Wirkleistung", "Wirkleistung", "Kirsch.Watt", 25);
-				$this->RegisterVariableFloat("Oeltemperatur", "Öltemperatur", "~Temperature", 30);
 				
+				$this->RegisterVariableFloat("Oeltemperatur", "Öltemperatur", "~Temperature", 30);
 				$this->RegisterVariableFloat("Heizwasser", "Heizwasser", "~Temperature", 35);
 				$this->RegisterVariableFloat("Abgasteperatur", "Abgasteperatur", "~Temperature", 40);
 				$this->RegisterVariableFloat("Gehaeusetemperatur", "Gehäusetemperatur", "~Temperature", 45);
@@ -113,23 +113,23 @@
 			}
 			
 			// Target Power
-			$ScriptData['TP'] = (string) $xmlData->common[0]->targetPower;
-			SetValueInteger ($this->GetIDForIdent("Zielleistung"), $ScriptData['TP']); 
+			$ScriptData['TP'] = (integer) $xmlData->common[0]->targetPower;
+			SetValueInteger ($this->GetIDForIdent("Zielleistung"), $ScriptData['TP']);
 			//Referenzleistung
-			$ScriptData['RL'] = (string) $xmlData->common[0]->referencePower*1000;
+			$ScriptData['RL'] = (integer) $xmlData->common[0]->referencePower*1000;
 			SetValueInteger ($this->GetIDForIdent("Referenzleistung"), $ScriptData['RL']);
 			//Wirkleistung
 			$ScriptData['E7'] = (integer) $xmlData->electric[0]->E7;
 			SetValue ($this->GetIDForIdent("Wirkleistung"), $ScriptData['E7']);
 			
-			/*$ScriptData['OelT'] =  (string) $xmlData->sensors[0]->TI4;
+			$ScriptData['OelT'] =  (float) $xmlData->sensors[0]->TI4;
 			SetValueFloat ($this->GetIDForIdent("Oeltemperatur"), $ScriptData['OelT']);
-			$ScriptData['HW'] =  (string) $xmlData->sensors[0]->TI3;
+			$ScriptData['HW'] =  (float) $xmlData->sensors[0]->TI3;
 			SetValueFloat($this->GetIDForIdent("Heizwasser") , $ScriptData['HW']);
-			$ScriptData['AT'] =  (string) $xmlData->sensors[0]->TI5;
+			$ScriptData['AT'] =  (float) $xmlData->sensors[0]->TI5;
 			SetValueFloat ($this->GetIDForIdent("Abgasteperatur") , $ScriptData['AT']);
-			$ScriptData['GT'] =  (string) $xmlData->sensors[0]->TI6;
-			SetValueFloat ($this->GetIDForIdent("Gehaeusetemperatur") , $ScriptData['GT']);*/
+			$ScriptData['GT'] =  (float) $xmlData->sensors[0]->TI6;
+			SetValueFloat ($this->GetIDForIdent("Gehaeusetemperatur") , $ScriptData['GT']);
 			
 		}
 		
