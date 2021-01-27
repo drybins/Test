@@ -79,8 +79,9 @@
 		public function statePP($data)
 		{
 			$xmlData = @new SimpleXMLElement(utf8_encode($data), LIBXML_NOBLANKS + LIBXML_NONET);
-			$ScriptData['STATUS'] = (string) $xmlData->common[0]->state;
 			
+			//Status des BHKW'S
+			$ScriptData['STATUS'] = (string) $xmlData->common[0]->state;			
 			$StatusID = $this->GetIDForIdent("KirschStatus");
 			IPS_LogMessage("BHKW statePP StatusID", $StatusID);
 			
@@ -111,10 +112,25 @@
 				//SetValueString (14320 , "Status nicht gefunden:" . $ScriptData['STATUS']);
 			}
 			
+			// Target Power
 			$ScriptData['TP'] = (string) $xmlData->common[0]->targetPower;
 			SetValueInteger ($this->GetIDForIdent("Zielleistung"), $ScriptData['TP']);
+			//Referenzleistung
 			$ScriptData['RL'] = (string) $xmlData->common[0]->referencePower*1000;
 			SetValueInteger ($this->GetIDForIdent("Referenzleistung"), $ScriptData['RL']);
+			//Wirkleistung
+			$ScriptData['E7'] = (Float) $xmlData->electric[0]->E7;
+			SetValue ($this->GetIDForIdent("Wirkleistung"), $ScriptData['E7'])
+			
+			$ScriptData['OelT'] =  (string) $xmlData->sensors[0]->TI4;
+			SetValueFloat ($this->GetIDForIdent("Oeltemperatur"), $ScriptData['OelT']);
+			$ScriptData['HW'] =  (string) $xmlData->sensors[0]->TI3;
+			SetValueFloat($this->GetIDForIdent("Heizwasser") , $ScriptData['HW']);
+			$ScriptData['AT'] =  (string) $xmlData->sensors[0]->TI5;
+			SetValueFloat ($this->GetIDForIdent("Abgasteperatur") , $ScriptData['AT']);
+			$ScriptData['GT'] =  (string) $xmlData->sensors[0]->TI6;
+			SetValueFloat ($this->GetIDForIdent("Gehaeusetemperatur") , $ScriptData['GT']);
+			
 		}
 		
 		private function IPS_CreateVariableProfile($ProfileName, $ProfileType, $Suffix, $MinValue, $MaxValue, $StepSize, $Digits, $Icon) 
