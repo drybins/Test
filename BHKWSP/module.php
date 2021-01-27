@@ -49,7 +49,7 @@
 			{
 				for($i=0; $i<sizeof($bufferParts)-1; $i++) 
 				{
-					//IPS_LogMessage("Splitter bufferParts", $i . ":" . $bufferParts[$i]);
+					IPS_LogMessage("Splitter bufferParts", $i . ":" . $bufferParts[$i]);
 					//$this->SendDebug("Data", $bufferParts[$i], 0);
 					$this->AnalyseData($delimeter . $bufferParts[$i]);
 				}
@@ -87,10 +87,10 @@
 		{
 			IPS_LogMessage("Splitter statePP", $cmd);
 			
-			$xmlData = @new SimpleXMLElement(utf8_encode($cmd), LIBXML_NOBLANKS + LIBXML_NONET);
+			//$xmlData = @new SimpleXMLElement(utf8_encode($cmd), LIBXML_NOBLANKS + LIBXML_NONET);
 			//$SatusID = $this->GetIDForIdent("KirschStatus");
 			//IPS_LogMessage("Splitter statePP StatusID", $StatusID);
-			$ScriptData['STATUS'] = (string) $xmlData->common[0]->state;
+			//$ScriptData['STATUS'] = (string) $xmlData->common[0]->state;
 			$data = $cmd;
 			$this->SendDataToChildren(json_encode(Array("DataID" => "{185A67F4-5748-3EE1-4EED-CAF56975F21B}", "Buffer" => utf8_encode($data))));
 		}
