@@ -65,12 +65,12 @@
 		
 		public function statePP($data)
 		{
-			$xmlData = @new SimpleXMLElement(utf8_encode($cmd), LIBXML_NOBLANKS + LIBXML_NONET);
+			$xmlData = @new SimpleXMLElement(utf8_encode($data), LIBXML_NOBLANKS + LIBXML_NONET);
 			$ScriptData['STATUS'] = (string) $xmlData->common[0]->state;
 		}
 		
-		        private function IPS_CreateVariableProfile($ProfileName, $ProfileType, $Suffix, $MinValue, $MaxValue, $StepSize, $Digits, $Icon) 
-	{
+		private function IPS_CreateVariableProfile($ProfileName, $ProfileType, $Suffix, $MinValue, $MaxValue, $StepSize, $Digits, $Icon) 
+		{
 		    if (!IPS_VariableProfileExists($ProfileName)) 
 		    {
 			       IPS_CreateVariableProfile($ProfileName, $ProfileType);
@@ -79,6 +79,6 @@
 			       IPS_SetVariableProfileDigits($ProfileName, $Digits);
 			       IPS_SetVariableProfileIcon($ProfileName, $Icon);
 		    }
-	 }
+		}
 
 	}
