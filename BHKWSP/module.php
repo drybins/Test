@@ -24,7 +24,7 @@
 		public function ForwardData($JSONString)
 		{
 			$data = json_decode($JSONString);
-			IPS_LogMessage("Splitter FRWD", utf8_decode($data->Buffer));
+			//IPS_LogMessage("Splitter FRWD", utf8_decode($data->Buffer));
 
 			$this->SendDataToParent(json_encode(Array("DataID" => "{79827379-F36E-4ADA-8A95-5F8D1DC92FA9}", "Buffer" => $data->Buffer)));
 
@@ -38,7 +38,7 @@
 					//Kontrollieren ob Buffer leer ist.
 			$bufferData = $this->GetBuffer("DataBuffer");
 			$bufferData .= $data->Buffer;
-			IPS_LogMessage("Splitter bufferData", $bufferData);
+			//IPS_LogMessage("Splitter bufferData", $bufferData);
 			
 			$delimeter = '<?xml version="1.0" encoding="UTF-8"?>';
 			$bufferParts = explode($delimeter, $bufferData);	
@@ -49,7 +49,7 @@
 			{
 				for($i=0; $i<sizeof($bufferParts)-1; $i++) 
 				{
-					IPS_LogMessage("Splitter bufferParts", $i . ":" . $bufferParts[$i]);
+					//IPS_LogMessage("Splitter bufferParts", $i . ":" . $bufferParts[$i]);
 					//$this->SendDebug("Data", $bufferParts[$i], 0);
 					//$this->AnalyseData($delimeter . $bufferParts[$i]);
 					$this->send2BHKW($delimeter . $bufferParts[$i]);
@@ -62,31 +62,10 @@
 			//$this->DRTEST(utf8_decode($data->Buffer));
 			//$this->SendDataToChildren(json_encode(Array("DataID" => "{185A67F4-5748-3EE1-4EED-CAF56975F21B}", "Buffer" => $data->Buffer)));
 		}
-		
-		
-		public function AnalyseData(string $data)
-		{
-			IPS_LogMessage("Splitter data", $data);
-			$start = strpos($data,"<",5);
-			$end = strpos($data,">",$start);
-			$cmd = substr($data, $start+1, $end-$start-1);
-			IPS_LogMessage("Splitter CMD", $cmd);
-
-				//IPS_LogMessage("Splitter CMD", $cmd);
-				switch ($cmd)
-				{
-					case "statePP":
-						$this->statePP($data);
-						break;
-					default:
-						break;
-				}
-			}
-
-		
+			
 		public function send2BHKW(string $cmd)
 		{
-			IPS_LogMessage("Splitter statePP", $cmd);
+			//IPS_LogMessage("Splitter statePP", $cmd);
 			
 			//$xmlData = @new SimpleXMLElement(utf8_encode($cmd), LIBXML_NOBLANKS + LIBXML_NONET);
 			//$SatusID = $this->GetIDForIdent("KirschStatus");
