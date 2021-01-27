@@ -8,7 +8,8 @@
 			
 			    $this->IPS_CreateVariableProfile("Kirsch.UpM", 1, " UpM", 0, 0, 1, 0, "");
 				$this->IPS_CreateVariableProfile("Kirsch.Kw", 1, " Kw", 0, 0,1, 2, "");
-				$this->IPS_CreateVariableProfile("Kirsch.Watt", 1, " Watt", 0, 0,1, 2, "");
+				$this->IPS_CreateVariableProfile("Kirsch.Watt", 1, " Watt", 0, 0,1, 0, "");
+				$this->IPS_CreateVariableProfile("Kirsch.Prozent", 1, " %", 0, 100,1, 0, "");
 				$this->IPS_CreateVariableProfile("Kirsch.Status", 1, "", 1, 11, 1, 2, "");
 				IPS_SetVariableProfileAssociation("Kirsch.Status", 1, "gestoppet", "", 0x7cfc00);
 				IPS_SetVariableProfileAssociation("Kirsch.Status", 2, "startet", "", 0x7cfc00);
@@ -23,6 +24,13 @@
 				$this->RegisterVariableInteger("Referenzleistung", "Referenz Leistung", "Kirsch.Watt", 20);
 				$this->RegisterVariableInteger("Wirkleistung", "Wirkleistung", "Kirsch.Watt", 25);
 				$this->RegisterVariableFloat("Oeltemperatur", "Öltemperatur", "~Temperature", 30);
+				
+				$this->RegisterVariableFloat("Heizwasser", "Heizwasser", "~Temperature", 35);
+				$this->RegisterVariableFloat("Abgasteperatur", "Abgasteperatur", "~Temperature", 40);
+				$this->RegisterVariableFloat("Gehaeusetemperatur", "Gehäusetemperatur", "~Temperature", 45);
+				$this->RegisterVariableInteger("Motordrehzahl", "Motordrehzahl", "Kirsch.UpM", 50);
+				$this->RegisterVariableInteger("Speicherladepumpe", "Speicherladepumpe", "Kirsch.Prozent", 55);
+				$this->RegisterVariableInteger("Drosselklapenstellung", "Drosselklapenstellung", "Kirsch.Prozent", 60);
 
 				$this->ConnectParent("{33B9B2D7-6BC5-1CF6-A86F-E76622A7FFB7}");
 		}
