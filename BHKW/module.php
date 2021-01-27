@@ -111,7 +111,7 @@
 			default:
 				//SetValueString (14320 , "Status nicht gefunden:" . $ScriptData['STATUS']);
 			}
-			
+			/*
 			// Target Power
 			$ScriptData['TP'] = (string) $xmlData->common[0]->targetPower;
 			SetValueInteger ($this->GetIDForIdent("Zielleistung"), $ScriptData['TP']);
