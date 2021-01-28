@@ -11,6 +11,7 @@
 				$this->IPS_CreateVariableProfile("Kirsch.Watt", 1, " Watt", 0, 0,1, 0, "");
 				$this->IPS_CreateVariableProfile("Kirsch.Prozent", 1, " %", 0, 100,1, 0, "");
 				$this->IPS_CreateVariableProfile("Kirsch.Status", 1, "", 1, 11, 1, 2, "");
+				
 				IPS_SetVariableProfileAssociation("Kirsch.Status", 1, "gestoppet", "", 0x7cfc00);
 				IPS_SetVariableProfileAssociation("Kirsch.Status", 2, "startet", "", 0x7cfc00);
 				IPS_SetVariableProfileAssociation("Kirsch.Status", 3, "aufwärmen", "", 0x7cfc00);
@@ -69,11 +70,12 @@
 				case "statePP":
 					$this->statePP($data);
 					break;
+				case "statePower":
+					//$this->statePP($data);
+					break;
 				default:
 					break;
 			}
-			
-			
 		}
 		
 		private function statePP($data)
@@ -116,13 +118,13 @@
 			$ScriptData['TP'] = (integer) $xmlData->common[0]->targetPower;
 			SetValueInteger ($this->GetIDForIdent("Zielleistung"), $ScriptData['TP']);
 			//Referenzleistung
-			$ScriptData['RL'] = (integer) $xmlData->common[0]->referencePower*1000;
+			$ScriptData['RL'] = (float) $xmlData->common[0]->referencePower*1000;
 			SetValueInteger ($this->GetIDForIdent("Referenzleistung"), $ScriptData['RL']);
 			//Wirkleistung
 			$ScriptData['E7'] = (integer) $xmlData->electric[0]->E7;
 			SetValue ($this->GetIDForIdent("Wirkleistung"), $ScriptData['E7']);
 			
-			$ScriptData['OelT'] =  (float) $xmlData->sensors[0]->TI4;
+			$ScriptData['OelT'] = (float) $xmlData->sensors[0]->TI4;
 			SetValueFloat ($this->GetIDForIdent("Oeltemperatur"), $ScriptData['OelT']);
 			$ScriptData['HW'] =  (float) $xmlData->sensors[0]->TI3;
 			SetValueFloat($this->GetIDForIdent("Heizwasser") , $ScriptData['HW']);
@@ -137,7 +139,6 @@
 			SetValue ($this->GetIDForIdent("Speicherladepumpe")  , $ScriptData['P1']);
 			$ScriptData['V2'] =  (Float) $xmlData->actors[0]->V2;
 			SetValue ($this->GetIDForIdent("Drosselklapenstellung")  , $ScriptData['V2']);
-			
 		}
 		
 		private function IPS_CreateVariableProfile($ProfileName, $ProfileType, $Suffix, $MinValue, $MaxValue, $StepSize, $Digits, $Icon) 
