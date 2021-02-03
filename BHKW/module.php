@@ -32,6 +32,10 @@
 				$this->RegisterVariableInteger("Motordrehzahl", "Motordrehzahl", "Kirsch.UpM", 50);
 				$this->RegisterVariableInteger("Speicherladepumpe", "Speicherladepumpe", "Kirsch.Prozent", 55);
 				$this->RegisterVariableInteger("Drosselklapenstellung", "Drosselklapenstellung", "Kirsch.Prozent", 60);
+				
+				$this->RegisterVariableFloat("Speicheroben", "Speichertemperatur oben", "~Temperature", 70);
+				$this->RegisterVariableFloat("Speichermitte", "Speichertemperatur mitte", "~Temperature", 75);
+				$this->RegisterVariableFloat("Speicherunten", "Speichertemperatur unten", "~Temperature", 80);
 
 				$this->ConnectParent("{33B9B2D7-6BC5-1CF6-A86F-E76622A7FFB7}");
 		}
@@ -139,6 +143,17 @@
 			SetValue ($this->GetIDForIdent("Speicherladepumpe")  , $ScriptData['P1']);
 			$ScriptData['V2'] =  (Float) $xmlData->actors[0]->V2;
 			SetValue ($this->GetIDForIdent("Drosselklapenstellung")  , $ScriptData['V2']);
+			
+			/*[Eickeloh\Heizung\BHKW\Heizung\Speichertemperatur oben]*/
+			$ScriptData['SO'] =  (Float) $xmlData->sensors[0]->T2;
+			SetValueFloat ($this->GetIDForIdent("Speicheroben") , $ScriptData['SO']);
+			/*[Eickeloh\Heizung\BHKW\Heizung\Speichertemperatur mitte]*/
+			$ScriptData['SM'] =  (Float) $xmlData->sensors[0]->T3;
+			SetValueFloat ($this->GetIDForIdent("Speichermitte") , $ScriptData['SM']);
+			/*[Eickeloh\Heizung\BHKW\Heizung\Speichertemperatur unten]*/
+			$ScriptData['SU'] =  (Float) $xmlData->sensors[0]->T4;
+			SetValueFloat($this->GetIDForIdent("Speicherunten") , $ScriptData['SU']);
+			
 		}
 		
 		private function IPS_CreateVariableProfile($ProfileName, $ProfileType, $Suffix, $MinValue, $MaxValue, $StepSize, $Digits, $Icon) 
