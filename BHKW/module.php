@@ -37,7 +37,7 @@
 				$this->RegisterVariableFloat("Speichermitte", "Speichertemperatur mitte", "~Temperature", 75);
 				$this->RegisterVariableFloat("Speicherunten", "Speichertemperatur unten", "~Temperature", 80);
 				
-				$this->RegisterVariableFloat("Außentemperatur", "Außentemperatur", "~Temperature", 85);
+				$this->RegisterVariableFloat("Aussentemperatur", "Außentemperatur", "~Temperature", 85);
 				$this->RegisterVariableFloat("VorlaufTemperatur", "Vorlauf Temperatur", "~Temperature", 90);
 				$this->RegisterVariableFloat("RuecklaufTemperatur", "Rücklauf Temperatur", "~Temperature", 95);
 				
@@ -169,7 +169,7 @@
 			
 			/*[Eickeloh\Heizung\BHKW\Heizung\Außentemperatur]
 			$ScriptData['T1'] =  (Float) $xmlData->sensors[0]->T1;
-			SetValue ($this->GetIDForIdent("Außentemperatur") , $ScriptData['T1']);
+			SetValue ($this->GetIDForIdent("Aussentemperatur") , $ScriptData['T1']);
 			/*[Eickeloh\Heizung\BHKW\Heizung\Vorlauftemperatur ist]
 			$ScriptData['T5'] =  (Float) $xmlData->sensors[0]->T5;
 			SetValue ($this->GetIDForIdent("VorlaufTemperatur") , $ScriptData['T5']);
