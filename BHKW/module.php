@@ -45,7 +45,7 @@
 				$this->RegisterVariableInteger("SP1", "Spannung Phase1", "~Volt", 110);
 				$this->RegisterVariableInteger("SP2", "Spannung Phase2", "~Volt", 115);
 				$this->RegisterVariableInteger("SP3", "Spannung Phase3", "~Volt", 120);
-Wirkleistung Phase1
+
 				$this->ConnectParent("{33B9B2D7-6BC5-1CF6-A86F-E76622A7FFB7}");
 		}
 
