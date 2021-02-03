@@ -36,7 +36,7 @@
 				$this->RegisterVariableFloat("Speicheroben", "Speichertemperatur oben", "~Temperature", 70);
 				$this->RegisterVariableFloat("Speichermitte", "Speichertemperatur mitte", "~Temperature", 75);
 				$this->RegisterVariableFloat("Speicherunten", "Speichertemperatur unten", "~Temperature", 80);
-				
+				/*
 				$this->RegisterVariableInteger("WLPG", "Wirkleistung gesamt", "Kirsch.Watt", 90);
 				$this->RegisterVariableInteger("WLP1", "Wirkleistung Phase1", "Kirsch.Watt", 95);
 				$this->RegisterVariableInteger("WLP2", "Wirkleistung Phase2", "Kirsch.Watt", 100);
@@ -45,7 +45,7 @@
 				$this->RegisterVariableInteger("SP1", "Spannung Phase1", "~Volt", 110);
 				$this->RegisterVariableInteger("SP2", "Spannung Phase2", "~Volt", 115);
 				$this->RegisterVariableInteger("SP3", "Spannung Phase3", "~Volt", 120);
-
+*/
 				$this->ConnectParent("{33B9B2D7-6BC5-1CF6-A86F-E76622A7FFB7}");
 		}
 
