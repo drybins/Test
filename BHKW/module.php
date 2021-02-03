@@ -163,7 +163,7 @@
 			$ScriptData['SU'] =  (Float) $xmlData->sensors[0]->T4;
 			SetValueFloat($this->GetIDForIdent("Speicherunten") , $ScriptData['SU']);
 
-			/*[Eickeloh\Heizung\BHKW\Wirkleistung Gesamt]*/
+			/*[Eickeloh\Heizung\BHKW\Wirkleistung Gesamt]
 			$ScriptData['E7'] = (Float) $xmlData->electric[0]->E7;
 			SetValue ($this->GetIDForIdent("WLPG") , $ScriptData['E7']);
 			/*
