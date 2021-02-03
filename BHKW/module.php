@@ -166,27 +166,27 @@
 			/*[Eickeloh\Heizung\BHKW\Wirkleistung Gesamt]*/
 			$ScriptData['E7'] = (Float) $xmlData->electric[0]->E7;
 			SetValue ($this->GetIDForIdent("WLPG") , $ScriptData['E7']);
-			
-			/*[Eickeloh\Heizung\BHKW\Wirkleistung Phase1]*/
+			/*
+			/*[Eickeloh\Heizung\BHKW\Wirkleistung Phase1]
 			$ScriptData['E71'] = (integer) $xmlData->electric[0]->E71;
 			SetValue ($this->GetIDForIdent("WLP1") , $ScriptData['E71']);
-			/*[Eickeloh\Heizung\BHKW\Wirkleistung Phase2]*/
+			/*[Eickeloh\Heizung\BHKW\Wirkleistung Phase2]
 			$ScriptData['E72'] = (integer) $xmlData->electric[0]->E72;
 			SetValue ($this->GetIDForIdent("WLP2") , $ScriptData['E72']);
-			/*[Eickeloh\Heizung\BHKW\Wirkleistung Phase3]*/
+			/*[Eickeloh\Heizung\BHKW\Wirkleistung Phase3]
 			$ScriptData['E73'] = (integer) $xmlData->electric[0]->E73;
 			SetValue ($this->GetIDForIdent("WLP3") , $ScriptData['E73']);
 			
-			/*[Eickeloh\Heizung\BHKW\Spannung Phase 1]*/
+			/*[Eickeloh\Heizung\BHKW\Spannung Phase 1]
 			$ScriptData['E1'] = (integer) $xmlData->electric[0]->E1;
 			SetValue ($this->GetIDForIdent("SP1") , $ScriptData['E1']);
-			/*[Eickeloh\Heizung\BHKW\Spannung Phase 2]*/
+			/*[Eickeloh\Heizung\BHKW\Spannung Phase 2]
 			$ScriptData['E2'] = (integer) $xmlData->electric[0]->E2;
 			SetValue ($this->GetIDForIdent("SP2") , $ScriptData['E2']);
-			/*[Eickeloh\Heizung\BHKW\Spannung Phase 3]*/
+			/*[Eickeloh\Heizung\BHKW\Spannung Phase 3]
 			$ScriptData['E3'] = (integer) $xmlData->electric[0]->E3;	
-			SetValue ($this->GetIDForIdent("SP3") , $ScriptData['E3']);
-			
+			SetValue ($this->GetIDForIdent("SP3") , $ScriptData['E3']); 
+			*/
 		}
 		
 		private function IPS_CreateVariableProfile($ProfileName, $ProfileType, $Suffix, $MinValue, $MaxValue, $StepSize, $Digits, $Icon) 
