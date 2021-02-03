@@ -167,13 +167,13 @@
 			$ScriptData['SU'] =  (Float) $xmlData->sensors[0]->T4;
 			SetValueFloat($this->GetIDForIdent("Speicherunten") , $ScriptData['SU']);
 			
-			/*[Eickeloh\Heizung\BHKW\Heizung\Außentemperatur]
+			/*[Eickeloh\Heizung\BHKW\Heizung\Außentemperatur]*/
 			$ScriptData['T1'] =  (Float) $xmlData->sensors[0]->T1;
 			SetValue ($this->GetIDForIdent("Aussentemperatur") , $ScriptData['T1']);
-			/*[Eickeloh\Heizung\BHKW\Heizung\Vorlauftemperatur ist]
+			/*[Eickeloh\Heizung\BHKW\Heizung\Vorlauftemperatur ist]*/
 			$ScriptData['T5'] =  (Float) $xmlData->sensors[0]->T5;
 			SetValue ($this->GetIDForIdent("VorlaufTemperatur") , $ScriptData['T5']);
-			/*[Eickeloh\Heizung\BHKW\Heizung\Rücklauftemperatur]
+			/*[Eickeloh\Heizung\BHKW\Heizung\Rücklauftemperatur]*/
 			$ScriptData['T6'] =  (Float) $xmlData->sensors[0]->T6;
 			SetValue ($this->GetIDForIdent("RuecklaufTemperatur") , $ScriptData['T6']);
 
