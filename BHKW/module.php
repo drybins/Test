@@ -28,7 +28,7 @@
 				//$Parent = IPS_GetParent();
 				//BHKW statePP Variablen anlegen
 				$this->RegisterVariableInteger("KirschStatus", "Status", "Kirsch.Status", 10);
-				$StatusID =IPS_GetObjectIDByIdent("KirschStatus",$BHKWID)
+				$StatusID =IPS_GetObjectIDByIdent("KirschStatus",$BHKWID);
 				IPS_SetParent($StatusID, $CatID);
 				$this->RegisterVariableInteger("Zielleistung", "Zielleistung", "Kirsch.Kw", 15);
 				$this->RegisterVariableInteger("Referenzleistung", "Referenz Leistung", "Kirsch.Watt", 20);
