@@ -23,14 +23,14 @@
 				$BHKWID = IPS_GetInstance($this->InstanceID)["InstanceID"];
 				if(!IPS_CategoryExists(IPS_GetObjectIDByIdent("statePP",$BHKWID)))
 				{
-					$CatID = IPS_CreateCategory();       // Kategorie anlegen
-					IPS_SetName($CatID, "statePP"); // Kategorie benennen
-					IPS_SetParent($CatID, $BHKWID);
+					//$CatID = IPS_CreateCategory();       // Kategorie anlegen
+					//IPS_SetName($CatID, "statePP"); // Kategorie benennen
+					//IPS_SetParent($CatID, $BHKWID);
 				}
-				else
-				{
-					$CatID = IPS_GetObjectIDByIdent("statePP",$BHKWID);
-				}
+				//else
+				//{
+				//	$CatID = IPS_GetObjectIDByIdent("statePP",$BHKWID);
+				//}
 				//IPS_LogMessage("BHKW ID", $BHKWID);
 				//$Parent = IPS_GetParent();
 				//BHKW statePP Variablen anlegen
