@@ -21,12 +21,12 @@
 				IPS_SetVariableProfileAssociation("Kirsch.Status", 10, "Notstop", "", 0xff0000);
 				IPS_SetVariableProfileAssociation("Kirsch.Status", 11, "Fehler", "", 0xff0000);	
 				$BHKWID = IPS_GetInstance($this->InstanceID)["InstanceID"];
-				if(IPS_CategoryExists(IPS_GetObjectIDByIdent("statePP",$BHKWID)))
-				{
+				//if(IPS_CategoryExists(IPS_GetObjectIDByIdent("statePP",$BHKWID)))
+				//{
 					//$CatID = IPS_CreateCategory();       // Kategorie anlegen
 					//IPS_SetName($CatID, "statePP"); // Kategorie benennen
 					//IPS_SetParent($CatID, $BHKWID);
-				}
+				//}
 				//else
 				//{
 					$CatID = IPS_GetObjectIDByIdent("statePP",$BHKWID);
