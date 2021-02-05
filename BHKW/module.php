@@ -21,7 +21,7 @@
 				IPS_SetVariableProfileAssociation("Kirsch.Status", 10, "Notstop", "", 0xff0000);
 				IPS_SetVariableProfileAssociation("Kirsch.Status", 11, "Fehler", "", 0xff0000);	
 				$BHKWID = IPS_GetInstance($this->InstanceID)["InstanceID"];
-				//IPS_LogMessage("BHKW ID", $BHKWID);
+				IPS_LogMessage("BHKW ID", $BHKWID);
 				//$Parent = IPS_GetParent();
 				//BHKW statePP Variablen anlegen
 				$this->RegisterVariableInteger("KirschStatus", "Status", "Kirsch.Status", 10);
