@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-class DRForm extends ipsmodule
+class FormularTest extends ipsmodule
 {
 
 
