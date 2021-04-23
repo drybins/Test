@@ -44,6 +44,17 @@ class FormularTest extends ipsmodule
  
         return json_encode($form);
     }
+    
+        /**
+     * Interne Funktion des SDK.
+     */
+    public function FTest($NR)
+    {
+        
+        $Result = $NR + $NR;
+        return json_encode($Result);
+    }
+    
 
 }
 
