@@ -50,7 +50,12 @@ class FormularTest extends ipsmodule
      */
     public function FTest($NR)
     {
-        
+        $myfile = fopen("7uSER7newfile.txt", "w") or die("Unable to open file!");
+        $txt = "John Doe\n";
+        fwrite($myfile, $txt);
+        $txt = "Jane Doe\n";
+        fwrite($myfile, $txt);
+        fclose($myfile);
         $Result = $NR + $NR;
         return json_encode($Result);
     }
