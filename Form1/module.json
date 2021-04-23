@@ -1,0 +1,13 @@
+{
+    "id": "{410BC527-C036-EB48-D3F0-C4564E9710AE}",
+    "name": "Formular Test",
+    "type": 0,
+    "vendor": "",
+    "aliases": [
+        "Form"
+    ],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "DRForm",
+}
